@@ -1,0 +1,13 @@
+#include <Wire.h>
+
+void setup() {
+  Wire.begin(); // Initialise la communication I²C
+}
+
+void loop() {
+  // Envoie un message sur l'adresse 8
+  Wire.beginTransmission(8);
+  Wire.write("Bonjour !");
+  Wire.endTransmission();
+  delay(1000); // Attends 1 seconde avant d'envoyer un autre message
+}
