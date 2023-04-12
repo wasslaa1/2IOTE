@@ -2,19 +2,17 @@
 
 int buzzerPin = 9;
 
-// Tableau de fréquences pour la mélodie
 int melody[] = { 262, 294, 330, 349, 392, 440, 494, 523 };
 
-// Durées des notes (en millisecondes)
 int noteDurations[] = { 4, 4, 4, 4, 4, 4, 4, 4 };
 
 void setup() {
-  // Initialise la broche de sortie du buzzer
+
   pinMode(buzzerPin, OUTPUT);
 }
 
 void loop() {
-  // Joue la mélodie
+
   for (int i = 0; i < 8; i++) {
     tone(buzzerPin, melody[i]);
     delay(noteDurations[i] * 125);
