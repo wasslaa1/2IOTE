@@ -1,0 +1,15 @@
+#include <LiquidCrystal.h>
+
+// Initialisation de l'écran LCD
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+void setup() {
+  // Définition du nombre de colonnes et de lignes de l'écran LCD
+  lcd.begin(16, 2);
+  // Affichage du message "Hello World" sur l'écran LCD
+  lcd.print("Hello World");
+}
+
+void loop() {
+  // Boucle infinie
+}
