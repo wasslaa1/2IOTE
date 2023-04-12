@@ -1,63 +1,61 @@
 #include <LiquidCrystal.h>
 
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2); // Initialisation de l'écran LCD
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2); 
 
-int choix = 0; // Initialisation de la variable choix
+int choix = 0;
 
 void afficher_menu() {
-  lcd.clear(); // Effacer l'écran LCD
-  lcd.setCursor(0,0); // Positionner le curseur en haut à gauche de l'écran
-  lcd.print("Menu principal"); // Afficher le titre du menu
-  lcd.setCursor(0,1); // Positionner le curseur sur la deuxième ligne
-  lcd.print("1. Option 1"); // Afficher la première option
-  lcd.setCursor(0,2); // Positionner le curseur sur la troisième ligne
-  lcd.print("2. Option 2"); // Afficher la deuxième option
-  lcd.setCursor(0,3); // Positionner le curseur sur la quatrième ligne
-  lcd.print("3. Option 3"); // Afficher la troisième option
+  lcd.clear(); 
+  lcd.setCursor(0,0);
+  lcd.print("Menu principal"); 
+  lcd.setCursor(0,1); 
+  lcd.print("1. Option 1"); 
+  lcd.setCursor(0,2); 
+  lcd.print("2. Option 2"); 
+  lcd.setCursor(0,3); 
+  lcd.print("3. Option 3"); 
 }
 
 void setup() {
-  lcd.begin(16, 4); // Initialisation de l'écran LCD
-  afficher_menu(); // Afficher le menu principal
+  lcd.begin(16, 4);
+  afficher_menu();
 }
 
 void loop() {
-  while(choix == 0) { // Tant que l'utilisateur n'a pas choisi d'option
-    // Attendre l'appui sur un des boutons (à définir)
+  while(choix == 0) { 
     if (bouton_1_appuye) {
-      choix = 1; // Enregistrer le choix de l'utilisateur
+      choix = 1; 
     }
     if (bouton_2_appuye) {
-      choix = 2; // Enregistrer le choix de l'utilisateur
+      choix = 2;
     }
     if (bouton_3_appuye) {
-      choix = 3; // Enregistrer le choix de l'utilisateur
+      choix = 3; 
     }
   }
   
-  // Traiter le choix de l'utilisateur
+
   switch(choix) {
     case 1:
-      lcd.clear(); // Effacer l'écran LCD
-      lcd.setCursor(0,0); // Positionner le curseur en haut à gauche de l'écran
-      lcd.print("Option 1"); // Afficher le titre de l'option 1
-      // Traiter l'option 1
+      lcd.clear(); 
+      lcd.setCursor(0,0);
+      lcd.print("Option 1"); 
       break;
     case 2:
-      lcd.clear(); // Effacer l'écran LCD
-      lcd.setCursor(0,0); // Positionner le curseur en haut à gauche de l'écran
-      lcd.print("Option 2"); // Afficher le titre de l'option 2
+      lcd.clear(); 
+      lcd.setCursor(0,0);
+      lcd.print("Option 2");
       // Traiter l'option 2
       break;
     case 3:
-      lcd.clear(); // Effacer l'écran LCD
-      lcd.setCursor(0,0); // Positionner le curseur en haut à gauche de l'écran
-      lcd.print("Option 3"); // Afficher le titre de l'option 3
+      lcd.clear();
+      lcd.setCursor(0,0);
+      lcd.print("Option 3");
       // Traiter l'option 3
       break;
   }
   
-  choix = 0; // Réinitialiser la variable choix pour permettre une nouvelle sélection
-  delay(1000); // Attendre une seconde avant de revenir au menu principal
-  afficher_menu(); // Afficher le menu principal
+  choix = 0; 
+  delay(1000);
+  afficher_menu();
 }
