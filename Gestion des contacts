@@ -1,14 +1,13 @@
-// Définition des constantes pour la taille des tableaux de contacts
 #define MAX_CONTACTS 50
 #define MAX_NAME_LENGTH 20
 
-// Définition des tableaux pour stocker les contacts
+
 char contacts[MAX_CONTACTS][MAX_NAME_LENGTH];
 int numbers[MAX_CONTACTS];
 
-// Ajouter un nouveau contact
+
 void addContact(char name[], int number) {
-  // Trouver une case libre dans les tableaux
+
   int i;
   for (i = 0; i < MAX_CONTACTS; i++) {
     if (contacts[i][0] == '\0') {
@@ -16,29 +15,27 @@ void addContact(char name[], int number) {
     }
   }
   if (i < MAX_CONTACTS) {
-    // Ajouter le nouveau contact
+
     strcpy(contacts[i], name);
     numbers[i] = number;
   }
 }
 
-// Supprimer un contact existant
+
 void deleteContact(int index) {
-  // Supprimer le contact
+
   contacts[index][0] = '\0';
   numbers[index] = 0;
 }
 
-// Modifier un contact existant
+
 void editContact(int index, char name[], int number) {
-  // Modifier le contact
   strcpy(contacts[index], name);
   numbers[index] = number;
 }
 
-// Obtenir le nombre de contacts
+
 int getContactCount() {
-  // Compter le nombre de contacts
   int count = 0;
   for (int i = 0; i < MAX_CONTACTS; i++) {
     if (contacts[i][0] != '\0') {
@@ -48,14 +45,12 @@ int getContactCount() {
   return count;
 }
 
-// Obtenir le nom d'un contact
+
 char* getContactName(int index) {
-  // Retourner le nom du contact
   return contacts[index];
 }
 
-// Obtenir le numéro de téléphone d'un contact
+
 int getContactNumber(int index) {
-  // Retourner le numéro de téléphone du contact
   return numbers[index];
 }
